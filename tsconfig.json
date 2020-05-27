@@ -1,0 +1,7 @@
+{
+	"compilerOptions": {
+		"types": ["espruino", "memfs"],
+		"target": "ES3",
+		"module": "EsNext"
+	}
+}

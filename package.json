@@ -1,0 +1,40 @@
+{
+	"name": "espruino-stuff",
+	"version": "0.0.0",
+	"description": "Yay",
+	"private": true,
+	"main": "index.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/TheGLander/espruinoStuff.git"
+	},
+	"keywords": [
+		"espruino"
+	],
+	"author": "G lander",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/TheGLander/espruinoStuff/issues"
+	},
+	"homepage": "https://github.com/TheGLander/espruinoStuff#readme",
+	"dependencies": {
+		"@rollup/plugin-commonjs": "^12.0.0",
+		"@rollup/plugin-node-resolve": "^8.0.0",
+		"espruino": "^0.1.31",
+		"memfs": "^3.2.0",
+		"rollup": "^2.10.9",
+		"rollup-plugin-analyzer": "^3.2.3",
+		"rollup-plugin-babel-minify": "^10.0.0",
+		"rollup-plugin-node-builtins": "^2.1.2",
+		"rollup-plugin-typescript2": "^0.27.1",
+		"typescript": "^3.9.3"
+	},
+	"devDependencies": {
+		"@babel/preset-env": "^7.10.0",
+		"@rollup/plugin-babel": "^5.0.2",
+		"@types/espruino": "^1.94.3"
+	}
+}
