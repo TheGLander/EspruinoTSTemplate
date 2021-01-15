@@ -1,6 +1,7 @@
 {
 	"compilerOptions": {
-		"types": ["espruino"],
+		"lib": ["ES2015.Core"],
+
 		"target": "ES3",
 		"module": "EsNext"
 	}

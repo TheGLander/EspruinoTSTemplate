@@ -1,3 +1,5 @@
+declare const g: Graphics
+
 g.clear()
 g.drawRect(10, 10, 50, 70)
 g.fillRect(50, 50, 200, 200)
