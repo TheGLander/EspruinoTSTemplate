@@ -1,6 +1,15 @@
+declare interface Image {
+	width: number
+	height: number
+	bpp?: number
+	buffer: ArrayBuffer | string
+	transparent?: number
+	palette?: Uint16Array
+}
+
 declare class Graphics {
 	drawImage(
-		image: unknown,
+		image: Image | string,
 		x: number,
 		y: number,
 		options?: { rotate?: number; scale?: number }
@@ -154,3 +163,32 @@ declare namespace E {
 		options?: PromptOptions<T>
 	): Promise<T>
 }
+
+interface SetWatchParameters<D extends Pin | undefined> {
+	repeat?: boolean
+	edge?: "falling" | "rising" | "both"
+	debounce?: number
+	irq?: boolean
+	data?: D
+}
+interface SetWatchCallbackArg<D extends Pin | undefined> {
+	state: boolean
+	time: number
+	lastTime: number
+	data: D
+}
+
+type SetWatchCallback<D extends Pin | undefined> = (
+	arg: SetWatchCallbackArg<D>
+) => void
+
+declare function setWatch(
+	callback: SetWatchCallback<undefined>,
+	pin: Pin,
+	params: SetWatchParameters<undefined>
+): number
+declare function setWatch(
+	callback: SetWatchCallback<Pin>,
+	pin: Pin,
+	params: SetWatchParameters<Pin>
+): number

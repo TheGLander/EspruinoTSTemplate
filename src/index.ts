@@ -1,5 +1,7 @@
 import { beep, buzz } from "./audio"
+import espruinoImage from "./espruinoImage"
 import fs from "./fs"
+import waitForKey from "./waitForKey"
 
 let num: number
 
@@ -43,7 +45,19 @@ const mainMenu = {
 		if (response) {
 			await E.showAlert("I submitted!") // Not really...
 			E.showMenu(mainMenu)
-		}
+		} else E.showMenu(mainMenu)
+	},
+	"Show Image": async () => {
+		E.showMenu(undefined)
+		g.clear()
+		g.drawImage(
+			espruinoImage,
+			120 - (espruinoImage.width * 3.5) / 2,
+			120 - (espruinoImage.height * 3.5) / 2,
+			{ scale: 3.5 }
+		)
+		await waitForKey(BTN2)
+		E.showMenu(mainMenu)
 	},
 }
 
